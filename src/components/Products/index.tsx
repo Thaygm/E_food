@@ -20,8 +20,9 @@ const Products = ({ title, description, image }: ProductsProps) => (
         to="/product"
         type={'button'}
         title={'Adicione ao carrinho'}
-        children={'Adicionar ao carrinho'}
-      />
+      >
+        Adicionar ao carrinho
+      </Button>
     </BottomCard>
   </Card>
 )

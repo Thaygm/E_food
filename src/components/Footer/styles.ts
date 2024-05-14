@@ -1,39 +1,30 @@
 import styled from 'styled-components'
-import { colors } from '../../styles'
+import { breakpoints, colors } from '../../styles'
 
-export const FooterLayout = styled.header`
-  margin-top: 120px;
-  width: 100%;
-  height: 298px;
-  background-color: ${colors.beige};
-  overflow-y: hidden;
-  img {
-    margin-top: 40px;
-    width: 125px;
-    height: 56px;
-  }
-`
-export const Footerlinks = styled.ul`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  img {
-    margin-top: 40px;
-    width: 24px;
-    height: 24px;
-  }
-`
-export const Footerlink = styled.li`
-  margin-right: 8px;
-  cursor: pointer;
-`
-export const FooterText = styled.p`
-  font-size: 10px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 12px;
-  margin-top: 80px;
-`
 export const FooterContainer = styled.div`
+  background-color: ${colors.beige};
+  padding: 40px 0;
+  display: flex;
+  flex-direction: column;
   text-align: center;
+  height: auto;
+`
+
+export const TaxContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin: 30px 0 80px;
+`
+
+export const Description = styled.p`
+  margin: auto;
+  font-size: 10px;
+  text-align: center;
+  max-width: 480px;
+  width: 100%;
+
+  @media (max-width: ${breakpoints.tablet}) {
+    padding: 20px;
+  }
 `

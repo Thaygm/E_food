@@ -1,30 +1,30 @@
-import ProductType from '../../models/ProductType'
+import { Prato } from '../../pages/Categories'
 import Products from '../Products'
-import { Title } from '../Restaurant/styles'
-import { List, ListContainer } from './styles'
+import { Container, List } from './styles'
 
 export type ProductListProps = {
-  title: string
-  types: ProductType[]
+  pratos: Prato[]
 }
-const RestaurantsList = ({ title, types }: ProductListProps) => (
-  <>
-    <div className="container">
-      <ListContainer>
-        <Title>{title}</Title>
-        <List>
-          {types.map((type) => (
+
+const ProductList = ({ pratos }: ProductListProps) => (
+  <Container className="container">
+    <div>
+      <List>
+        {pratos.map((prato) => (
+          <li key={prato.id}>
             <Products
-              key={type.id}
-              title={type.title}
-              description={type.description}
-              image={type.image}
+              id={prato.id}
+              foto={prato.foto}
+              nome={prato.nome}
+              descricao={prato.descricao}
+              porcao={prato.porcao}
+              preco={prato.preco}
             />
-          ))}
-        </List>
-      </ListContainer>
+          </li>
+        ))}
+      </List>
     </div>
-  </>
+  </Container>
 )
 
-export default RestaurantsList
+export default ProductList

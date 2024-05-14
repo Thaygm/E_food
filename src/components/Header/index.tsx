@@ -1,15 +1,18 @@
-import { HeaderContainer, HeaderLayout, HeaderText } from './styles'
-import Logo from '../../assets/images/logo.svg'
+import { HeaderContainer, Title } from './styles'
+
+import logo from '../../assets/images/logo.png'
 
 const Header = () => (
-  <HeaderLayout>
-    <HeaderContainer>
-      <img src={Logo} alt="logo principal" />
-      <HeaderText>
-        Viva experiências gastronômicas <br /> no conforto da sua casa
-      </HeaderText>
-    </HeaderContainer>
-  </HeaderLayout>
+  <HeaderContainer>
+    <div className="container">
+      <div>
+        <img src={logo} alt="Efood" />
+      </div>
+      <div>
+        <Title>Viva experiências gastronômicas no conforto da sua casa</Title>
+      </div>
+    </div>
+  </HeaderContainer>
 )
 
 export default Header

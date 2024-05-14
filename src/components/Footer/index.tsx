@@ -1,38 +1,32 @@
-import {
-  FooterContainer,
-  FooterLayout,
-  FooterText,
-  Footerlink,
-  Footerlinks
-} from './styles'
+import { Link } from 'react-router-dom'
 
-import Logo from '../../assets/images/logo.svg'
-import insta from '../../assets/images/insta.svg'
-import face from '../../assets/images/face.svg'
-import twitter from '../../assets/images/twitter.svg'
+import { FooterContainer, TaxContainer, Description } from './styles'
+
+import logo from '../../assets/images/logo.png'
+import instagram from '../../assets/images/instagram.png'
+import facebook from '../../assets/images/facebook.png'
+import twitter from '../../assets/images/twitter.png'
 
 const Footer = () => (
-  <FooterLayout>
-    <FooterContainer>
-      <img src={Logo} alt="logo" />
-      <Footerlinks>
-        <Footerlink>
-          <img src={insta} alt="logo instagram" />
-        </Footerlink>
-        <Footerlink>
-          <img src={face} alt="logo facebook" />
-        </Footerlink>
-        <Footerlink>
-          <img src={twitter} alt="logo X/twitter" />
-        </Footerlink>
-      </Footerlinks>
-      <FooterText>
-        A efood é uma plataforma para divulgação de estabelecimentos, a
-        responsabilidade pela entrega, qualidade <br /> dos produtos é toda do
-        estabelecimento contratado.
-      </FooterText>
-    </FooterContainer>
-  </FooterLayout>
+  <FooterContainer>
+    <div className="container">
+      <Link to="/">
+        <img src={logo} alt="Efood" />
+      </Link>
+      <TaxContainer>
+        <img src={instagram} alt="Instagram" />
+        <img src={facebook} alt="Facebook" />
+        <img src={twitter} alt="Twitter" />
+      </TaxContainer>
+      <div>
+        <Description>
+          A efood é uma plataforma para divulgação de estabelecimentos, a
+          responsabilidade pela entrega, qualidade dos produtos é toda do
+          estabelecimento contratado.
+        </Description>
+      </div>
+    </div>
+  </FooterContainer>
 )
 
 export default Footer

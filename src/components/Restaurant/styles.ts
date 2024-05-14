@@ -1,75 +1,90 @@
 import styled from 'styled-components'
-import { colors } from '../../styles'
+import { breakpoints, colors } from '../../styles'
 
 export const Card = styled.div`
-  background-color: ${colors.white};
   position: relative;
-  border: solid 1px ${colors.red};
 
-  img {
-    top: 0px;
-    left: 0px;
-    width: 472px;
-    height: 217px;
+  > img {
+    width: 100%;
+    max-height: 217px;
     object-fit: cover;
+
+    @media (max-width: ${breakpoints.tablet}) {
+      padding: 0 20px;
+      display: block;
+      bottom: 3px;
+      margin-top: 60px;
+    }
   }
 `
 
-export const BottomCard = styled.div`
+export const CardContainer = styled.div`
+  background-color: ${colors.white};
   padding: 8px;
+  margin-bottom: 45px;
+  border-left: 1px solid ${colors.coral};
+  border-right: 1px solid ${colors.coral};
+  border-bottom: 1px solid ${colors.coral};
+  margin-top: -4px;
+
+  @media (max-width: ${breakpoints.tablet}) {
+    margin: 0 20px;
+  }
+`
+
+export const TitleContainer = styled.div`
   display: flex;
-  flex-direction: column;
-  align-items: baseline;
+  align-items: center;
+  justify-content: space-between;
 `
 
 export const Title = styled.h3`
-  font-weight: 700;
+  font-weight: bold;
   font-size: 18px;
-  color: ${colors.red};
-  margin-top: 8px;
-  display: block;
 `
-export const CardHeader = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
 
-  h3 {
-    width: 70%;
-    margin-top: 0;
-    white-space: nowrap;
-  }
+export const NotaContainer = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 `
+
+export const Nota = styled.p`
+  font-weight: bold;
+  font-size: 18px;
+  margin-right: 8px;
+`
+
 export const Description = styled.p`
   font-size: 14px;
   line-height: 22px;
-  display: block;
-  margin-top: 16px;
-  margin-bottom: 16px;
+  margin: 16px 0;
+  min-height: 110px;
 `
+
 export const Infos = styled.div`
   position: absolute;
-  display: flex;
-  gap: 4px;
   top: 16px;
-  right: 16px;
+  right: 24px;
 `
-export const Score = styled.p`
-  font-size: 18px;
-  font-weight: 700;
-  line-height: 21px;
-  align-items: center;
-`
-export const Rating = styled.div`
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  justify-content: flex-end;
-  width: 100%;
 
-  img {
-    width: 21px;
-    height: 21px;
-  }
+export const TagContainer = styled.div`
+  background-color: ${colors.coral};
+  color: ${colors.beige};
+  font-size: 12px;
+  font-weight: bold;
+  padding: 6px 4px;
+  display: inline-block;
+  margin-right: 8px;
+`
+
+export const ReadMore = styled.button`
+  background-color: ${colors.coral};
+  font-size: 14px;
+  font-weight: bold;
+  padding: 4px 6px;
+  display: inline-block;
+  margin-right: 8px;
+  border: none;
+  cursor: pointer;
 `

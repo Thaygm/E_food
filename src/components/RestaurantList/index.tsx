@@ -1,34 +1,32 @@
-import FoodType from '../../models/FoodType'
-import Restaurant from '../Restaurant'
-import { Title } from '../Restaurant/styles'
-import { List, ListContainer } from './styles'
+import { Restaurant } from '../../pages/Home'
+import Restaurante from '../Restaurant'
+import { Container, List } from './styles'
 
 export type RestaurantListProps = {
-  title: string
-  types: FoodType[]
+  comercios: Restaurant[]
 }
-const RestaurantsList = ({ title, types }: RestaurantListProps) => (
-  <>
-    <div className="container">
-      <ListContainer>
-        <Title>{title}</Title>
-        <List>
-          {types.map((type) => (
-            <Restaurant
-              key={type.id}
-              title={type.title}
-              category={type.category}
-              score={type.score}
-              description={type.description}
-              infos={type.infos}
-              image={type.image}
-              star={type.star}
+
+const RestaurantList = ({ comercios }: RestaurantListProps) => (
+  <Container className="container">
+    <div>
+      <List>
+        {comercios.map((comercio) => (
+          <li key={comercio.id}>
+            <Restaurante
+              id={comercio.id}
+              tipo={comercio.tipo}
+              image={comercio.capa}
+              title={comercio.titulo}
+              number={comercio.avaliacao}
+              destacado={comercio.destacado}
+              description={comercio.descricao}
+              button={comercio.button}
             />
-          ))}
-        </List>
-      </ListContainer>
+          </li>
+        ))}
+      </List>
     </div>
-  </>
+  </Container>
 )
 
-export default RestaurantsList
+export default RestaurantList

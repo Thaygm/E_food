@@ -1,58 +1,66 @@
-import Tag from '../Tag'
+import { Link } from 'react-router-dom'
+
+import estrela from '../../assets/images/estrela.png'
+
 import {
-  BottomCard,
   Card,
-  CardHeader,
+  CardContainer,
+  TitleContainer,
+  Title,
+  NotaContainer,
+  Nota,
   Description,
   Infos,
-  Rating,
-  Score,
-  Title
+  TagContainer,
+  ReadMore
 } from './styles'
-import star from '../../assets/images/estrela.svg'
-import { ButtonLink } from '../Button/styles'
 
-type Props = {
-  title: string
-  category: string
-  score: string
-  description: string
-  infos: string
+type RestaurantProps = {
+  id: number | undefined
   image: string
-  star: string
+  title: string
+  number: number
+  description: string
+  button: string
+  tipo: string
+  destacado: boolean
 }
 
 const Restaurant = ({
+  id,
+  image,
   title,
-  category,
-  score,
+  number,
   description,
-  infos,
-  image
-}: Props) => (
+  tipo,
+  destacado
+}: RestaurantProps) => (
   <Card>
     <img src={image} alt={title} />
     <Infos>
-      {infos.length > 0 && <Tag>{infos}</Tag>}
-      <Tag>{category}</Tag>
+      {destacado === true ? (
+        <TagContainer>Destaque da semana</TagContainer>
+      ) : null}
+      <TagContainer>{tipo}</TagContainer>
     </Infos>
-    <BottomCard>
-      <CardHeader>
+    <CardContainer>
+      <TitleContainer>
         <Title>{title}</Title>
-        <Rating>
-          <Score>{score}</Score>
-          <img src={star} alt="" />
-        </Rating>
-      </CardHeader>
+        <NotaContainer>
+          <Nota>{number}</Nota>
+          <img src={estrela} alt="Estrela" />
+        </NotaContainer>
+      </TitleContainer>
       <Description>{description}</Description>
-      <ButtonLink
-        to="/product"
-        type={'button'}
-        title={'Conheça nosso cardápio'}
-      >
-        Saiba Mais
-      </ButtonLink>
-    </BottomCard>
+      <ReadMore>
+        <Link
+          style={{ textDecoration: 'none', color: '#FFEBD9' }}
+          to={`cardapio/${id}`}
+        >
+          Saiba mais
+        </Link>
+      </ReadMore>
+    </CardContainer>
   </Card>
 )
 

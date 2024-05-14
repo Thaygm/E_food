@@ -1,37 +1,34 @@
-import styled, { createGlobalStyle } from 'styled-components'
+import { createGlobalStyle } from 'styled-components'
 
 export const colors = {
-  white: '#fff',
-  white_bg: '#FFF8F2',
   beige: '#FFEBD9',
-  red: '#E66767'
+  lightBeige: '#FFF8F2',
+  coral: '#E66767',
+  white: '#ffffff'
 }
 
-export const GlobalStyle = createGlobalStyle`
- *{
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Roboto', sans-serif;
-      list-style: none;
-      text-decoration: none;
-      overflow-x: hidden;
+export const breakpoints = {
+  desktop: '1024px',
+  tablet: '768px'
+}
+
+export const GlobalCss = createGlobalStyle`
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Roboto, sans-serif;
+    list-style: none;
   }
 
-  body{
-      background: ${colors.white_bg};
-      color: ${colors.red};
+  body {
+    background-color: ${colors.lightBeige};
+    color: ${colors.coral};
   }
 
   .container {
-  max-width: 1024px;
-  margin: 0 auto;
-  width: 100%;
+    width: 100%;
+    margin: 0 auto;
   }
-`
 
-export const Container = styled.div`
-  max-width: 1024px;
-  margin: 0 auto;
-  width: 100%;
 `

@@ -1,28 +1,32 @@
 import styled from 'styled-components'
-import Vector from '../../assets/images/Vector.svg'
 
-export const HeaderLayout = styled.header`
-  top: -24px;
-  background-image: url(${Vector});
-  max-width: 2032px;
-  width: 100%;
-  height: 384px;
-  background-color: #e667670d;
-  overflow-y: hidden;
+import bannerImg from '../../assets/images/Vector.png'
+import { breakpoints } from '../../styles'
 
-  img {
-    margin-top: 64px;
+export const HeaderContainer = styled.div`
+  display: flex;
+  background-image: url(${bannerImg});
+  background-size: cotain;
+
+  .container {
+    height: 384px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: space-between;
+    padding: 40px 0;
   }
 `
 
-export const HeaderText = styled.p`
+export const Title = styled.h1`
+  max-width: 540px;
+  font-weight: bold;
+  width: 100%;
+  margin: auto;
   font-size: 36px;
-  font-style: normal;
-  font-weight: 900;
-  line-height: normal;
-  margin-top: 140px;
-  margin-bottom: 40px;
-`
-export const HeaderContainer = styled.div`
-  text-align: center;
+
+  @media (max-width: ${breakpoints.tablet}) {
+    font-size: 24px;
+    padding: 0 20px;
+  }
 `
